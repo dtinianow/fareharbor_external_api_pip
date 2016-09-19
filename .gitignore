@@ -1,1 +1,8 @@
 venv
+fareharbor/availability.pyc
+fareharbor/booking.pyc
+fareharbor/company.pyc
+fareharbor/fare_harbor_service.pyc
+fareharbor/item.pyc
+fareharbor/lodging.pyc
+fareharbor/verification.pyc

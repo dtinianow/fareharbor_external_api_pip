@@ -8,14 +8,13 @@ class Company:
         self.shortname = company['shortname']
 
 
-    def items(self):
-        items = FareHarborService().get_items(self.shortname)
-        # import code; code.interact(local=dict(globals(), **locals()))
-        for i in items:
-            Item(i)
-
-    def availabilities_by_date(data):
-        availabilities = FareHarborService
+    # def items(self):
+    #     items = FareHarborService().get_items(self.shortname)
+    #     for i in items:
+    #         Item(i)
+    #
+    # def availabilities_by_date(data):
+    #     availabilities = FareHarborService
 
     # def availabilities_by_date_range(data):
     #
@@ -40,4 +39,4 @@ class Company:
     #
     # def cancel_booking(uuid):
 
-a = Company({'name': 'Body Glove', 'shortname': 'bodyglove'}).items()
+# a = Company({'name': 'Body Glove', 'shortname': 'bodyglove'}).items()

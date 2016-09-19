@@ -1,16 +1,9 @@
-class Availability(object):
-    def __init__(self, params):
-        for key in params:
-            setattr(self, key, params[key])
-
-a = {'capacity': 10, 'customer_type_rates': [1, 5], 'custom_field_instances': "", 'item': 'nope', 'pk': 6, 'start_at': 'mmm never', 'end_at': 'mmm yesterday'}
-
-avail = Availability(a)
-
-print avail
-print avail.capacity
-print avail.customer_type_rates
-print avail.custom_field_instances
-print avail.item
-print avail.start_at
-print avail.end_at
+class Availability:
+    def __init__(self, availability):
+            self.capacity               = availability['capacity']
+            self.customer_type_rates    = availability['customer_type_rates']
+            self.custom_field_instances = availability['custom_field_instances']
+            self.item                   = availability['item']
+            self.pk                     = availability['pk']
+            self.start_at               = availability['start_at']
+            self.end_at                 = availability['end_at']

@@ -1,4 +1,23 @@
-class Booking(object):
-    def __init__(self, params):
-        for key in params:
-            setattr(self, key, params[key])
+class Booking:
+    def __init__(self, booking):
+        self.display_id          = booking['display_id']
+        self.status              = booking['status']
+        self.customers           = booking['customers']
+        self.uuid                = booking['uuid']
+        self.receipt_taxes       = booking['receipt_taxes']
+        self.note_safe_html      = booking['note_safe_html']
+        self.receipt_subtotal    = booking['receipt_subtotal']
+        self.arrival             = booking['arrival']
+        self.rebooked_to         = booking['rebooked_to']
+        self.confirmation_url    = booking['confirmation_url']
+        self.note                = booking['note']
+        self.receipt_total       = booking['receipt_total']
+        self.pickup              = booking['pickup']
+        self.contact             = booking['contact']
+        self.invoice_price       = booking['invoice_price']
+        self.custom_field_values = booking['custom_field_values']
+        self.pk                  = booking['pk']
+        self.rebooked_from       = booking['rebooked_from']
+        self.external_id         = booking['external_id']
+        self.availability        = booking['availability']
+        self.voucher_number      = booking['voucher_number']

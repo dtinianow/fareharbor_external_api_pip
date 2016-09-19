@@ -1,4 +1,8 @@
-class Verification(object):
-    def __init__(self, params):
-        for key in params:
-            setattr(self, key, params[key])
+class Verification:
+    def __init__(self, verification):
+        self.invoice_price    = verification['invoice_price']
+        self.receipt_taxes    = verification['receipt_taxes']
+        self.receipt_subtotal = verification['receipt_subtotal']
+        self.pickup           = verification['pickup']
+        self.receipt_total    = verification['receipt_total']
+        self.is_bookable      = verification['is_bookable']
