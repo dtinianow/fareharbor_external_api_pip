@@ -1,4 +1,5 @@
 class Item:
+
     def __init__(self, item):
         self.image_cdn_url                 = item['image_cdn_url']
         self.name                          = item['name']

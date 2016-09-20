@@ -1,4 +1,5 @@
 class Availability:
+    
     def __init__(self, availability):
             self.capacity               = availability['capacity']
             self.customer_type_rates    = availability['customer_type_rates']
