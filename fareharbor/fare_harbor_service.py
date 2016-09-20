@@ -86,7 +86,7 @@ class FareHarborService:
 # x = FareHarborService()
 #
 # x.get_companies()
-# x.get_items('bodyglove')
+# print x.get_items('bodyglove')
 # data_1 = {'pk': 1108, 'date': '2016-11-14'}
 # x.get_availabilities_by_date('sharktourshawaii', data_1)
 # data_2 = {'pk': 1108, 'start_date': '2016-11-14', 'end_date': '2016-11-17'}
