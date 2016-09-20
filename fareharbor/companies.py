@@ -10,3 +10,7 @@ class Companies:
         for i in company_data:
             companies.append(Company(i))
         return companies
+
+    def find(self, shortname):
+        companies = self.all()
+        return next(company for company in companies if company.shortname == shortname)
