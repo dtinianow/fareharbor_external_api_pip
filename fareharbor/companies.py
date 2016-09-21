@@ -1,15 +1,14 @@
 from fare_harbor_service import FareHarborService
 from company import Company
 
-class Companies:
+class Companies(object):
 
     def all(self):
         raw_data = FareHarborService().get_companies()
         company_data = raw_data['companies']
-        companies = []
-        for i in company_data:
-            companies.append(Company(i))
+        companies = [ Company(i) for i in companies_data ]
         return companies
+
 
     def find(self, shortname):
         companies = self.all()

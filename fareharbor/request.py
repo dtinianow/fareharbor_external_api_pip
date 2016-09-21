@@ -2,7 +2,7 @@ import requests
 import os
 import json
 
-class FareHarborService:
+class Request(object):
 
     # url = 'https://demo.fareharbor.com/api/external/v1/'
     # api_app_key = os.environ['FAREHARBOR_API_APP_KEY']
