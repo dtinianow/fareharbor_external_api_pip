@@ -14,20 +14,17 @@ class Company(object):
     def items(self):
         raw_items = FareHarborService().get_items(self.shortname)
         items_data = raw_items['items']
-        items = [ Item(i) for i in items_data ]
-        return items
+        return [ Item(i) for i in items_data ]
 
     def availabilities_by_date(self, data):
         raw_availabilities = FareHarborService().get_availabilities_by_date(self.shortname, data)
         availabilities_data = raw_availabilities['availabilities']
-        availabilities = [ Availability(i) for i in availabilities_data ]
-        return availabilities
+        return [ Availability(i) for i in availabilities_data ]
 
     def availabilities_by_date_range(self, data):
         raw_availabilities = FareHarborService().get_availabilities_by_date_range(self.shortname, data)
         availabilities_data = raw_availabilities['availabilities']
-        availabilities = [ Availability(i) for i in availabilities_data ]
-        return availabilities
+        return [ Availability(i) for i in availabilities_data ]
 
     def availability(self, pk):
         raw_availability = FareHarborService().get_availability(self.shortname, pk)
@@ -42,14 +39,12 @@ class Company(object):
     def lodgings(self):
         raw_lodgings = FareHarborService().get_lodgings(self.shortname)
         lodgings_data = raw_lodgings['lodgings']
-        lodgings = [ Lodging(i) for i in lodgings_data ]
-        return lodgings
+        return [ Lodging(i) for i in lodgings_data ]
 
     def availability_lodgings(self, pk):
         raw_lodgings = FareHarborService().get_availability_lodgings(self.shortname, pk)
         lodgings_data = raw_lodgings['lodgings']
-        lodgings = [ Lodging(i) for i in lodgings_data ]
-        return lodgings
+        return [ Lodging(i) for i in lodgings_data ]
 
     def create_booking(self, booking_request):
         raw_booking = FareHarborService().post_booking(booking_request)
@@ -100,5 +95,5 @@ class Company(object):
 # print g[-1].name
 # print h.status
 # print h.uuid
-# print i.status
+# print i.pickup
 # print j.status

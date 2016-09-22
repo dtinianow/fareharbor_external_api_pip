@@ -1,10 +1,10 @@
-from fareharbor.fare_harbor_service import FareHarborService
+from fareharbor.request import Request
 import unittest
 
 
-class FareHarborServiceTest(unittest.TestCase):
+class RequestTest(unittest.TestCase):
     def setUp(self):
-        self.service = FareHarborService()
+        self.service = Request()
 
     def test_gets_companies(self):
         self.assertEqual(self.service.get_companies(),
@@ -32,7 +32,7 @@ class FareHarborServiceTest(unittest.TestCase):
 
     def test_gets_single_availability(self):
         availability = self.service.get_availability('bodyglove', 70050)['availability']
-        self.assertEqual(availability['capacity'], 120)
+        self.assertEqual(availability['capacity'], 116)
 
     def test_gets_booking(self):
         booking = self.service.get_booking('bodyglove', '85ab9e4c-03fd-4bd4-af67-4946aa426c79')['booking']
@@ -45,12 +45,12 @@ class FareHarborServiceTest(unittest.TestCase):
         self.assertEqual(lodging['name'], 'Alii Cove')
 
     def test_posts_booking(self):
-        booking = self.service.post_booking({'pk': 70043,
+        booking = self.service.post_booking({'pk': 70042,
           'company_shortname': "bodyglove",
           'name': 'John Doe',
           'phone': '415-789-4563',
           'email': 'johndoe@example.com',
-          'customer_type_rates': [149126, 149126],
+          'customer_type_rates': [149124, 149124],
           'note': 'Optional booking note',
           'voucher_number': 'VN-123456'})['booking']
 
@@ -61,12 +61,12 @@ class FareHarborServiceTest(unittest.TestCase):
         self.assertEqual(contact_info['name'], 'John Doe')
 
     def test_verifies_booking(self):
-        verification = self.service.post_verify_booking({'pk': 70043,
+        verification = self.service.post_verify_booking({'pk': 70042,
           'company_shortname': 'bodyglove',
           'name': 'John Doe',
           'phone': '415-789-4563',
           'email': 'johndoe@example.com',
-          'customer_type_rates': [149126, 149126],
+          'customer_type_rates': [149124, 149124],
           'note': 'Optional booking note',
           'voucher_number': 'VN-123456'})
 
@@ -75,12 +75,12 @@ class FareHarborServiceTest(unittest.TestCase):
         self.assertEqual(verification['receipt_total'], 28387)
 
     def test_deletes_booking(self):
-        booking = self.service.post_booking({'pk': 70043,
+        booking = self.service.post_booking({'pk': 70042,
           'company_shortname': "bodyglove",
           'name': 'John Doe',
           'phone': '415-789-4563',
           'email': 'johndoe@example.com',
-          'customer_type_rates': [149126, 149126],
+          'customer_type_rates': [149124, 149124],
           'note': 'Optional booking note',
           'voucher_number': 'VN-123456'})['booking']
 
@@ -91,7 +91,7 @@ class FareHarborServiceTest(unittest.TestCase):
 
 def suite():
     test_suite = unittest.TestSuite()
-    test_suite.addTest(unittest.makeSuite(FareHarborServiceTest))
+    test_suite.addTest(unittest.makeSuite(RequestTest))
     return test_suite
 
 mySuite = suite()

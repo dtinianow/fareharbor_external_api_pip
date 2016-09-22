@@ -3,13 +3,13 @@ from company import Company
 
 class Companies(object):
 
-    def all(self):
+    @classmethod
+    def all(cls):
         raw_data = FareHarborService().get_companies()
         company_data = raw_data['companies']
-        companies = [ Company(i) for i in companies_data ]
-        return companies
+        return [ Company(i) for i in company_data ]
 
-
-    def find(self, shortname):
-        companies = self.all()
-        return next(company for company in companies if company.shortname == shortname)
+    @classmethod
+    def find(cls, shortname):
+        companies = cls.all()
+        print next(company for company in companies if company.shortname == shortname)
